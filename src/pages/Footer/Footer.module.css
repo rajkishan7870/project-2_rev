@@ -1,0 +1,22 @@
+.root{
+  padding: 1rem 2rem 1rem 10rem;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.btn{
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+}
