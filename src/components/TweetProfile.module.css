@@ -1,0 +1,16 @@
+*::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .first {
+    padding: 0.5rem;
+  }
+  
+  .second {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
