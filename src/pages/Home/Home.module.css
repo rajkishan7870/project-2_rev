@@ -1,0 +1,26 @@
+.root{
+  height: 100vh;
+  max-height: fit-content;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.left {
+    height: 100vh;
+    flex: 1;
+}
+
+.middle {
+    height: 100vh;
+    overflow: scroll;
+    flex: 1.5;
+    flex-shrink: 2;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+.right {
+    flex: 1;
+}
