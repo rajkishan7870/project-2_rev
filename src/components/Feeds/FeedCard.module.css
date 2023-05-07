@@ -1,0 +1,14 @@
+.tweetIcons {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.tweetIcons span {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+}
