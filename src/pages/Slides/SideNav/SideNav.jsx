@@ -8,7 +8,7 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Button from "@mui/material/Button";
-import style from "./SideNav.module.css";
+import style from "./SideNav.module.css"; 
 import Dialog from "@mui/material/Dialog";
 import Slide from "@mui/material/Slide";
 import CloseIcon from "@mui/icons-material/Close";
@@ -18,6 +18,10 @@ import { useNavigate } from "react-router-dom";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+
+
+
+
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
@@ -26,6 +30,10 @@ export default function SideNav() {
   const getName = getUsers();
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+
+  
+
+ 
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -164,9 +172,9 @@ export default function SideNav() {
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{ display: "flex", gap: "1rem" }}>
-              {getName.name} <BasicMenu />
+              {getName[getName.length-1].name} <BasicMenu />
             </span>
-            <span>@{getName.name}</span>
+            <span>@{getName[getName.length-1].name}</span>
           </div>
         </div>
       )}
