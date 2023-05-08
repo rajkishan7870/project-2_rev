@@ -55,10 +55,11 @@ export const TweetProfile = () => {
     setValue(event.target.value)
     setTweet({
       ...tweet,
-      [event.target.name]: event.target.value,
+      content : event.target.value,
       image: `https://picsum.photos/1000/500?q=${Date.now()}`,
     });
   };
+  console.log(tweet)
 
   return (
     <Box
