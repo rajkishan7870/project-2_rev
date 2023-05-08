@@ -15,15 +15,49 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Style from "./TweetProfile.module.css";
 import imgs from '../utils/profile.png'
-export const TweetProfile = ({closetweet}) => {
-  const [value, setValue] = useState("");
+import { useSetRecoilState } from "recoil";
+import { tweetsAtom } from "../Recoil/tweets";
+export const TweetProfile = () => {
+  const[value,setValue] = useState("");
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  const setTweets = useSetRecoilState(tweetsAtom);
+  const [tweet, setTweet] = React.useState({
+    id: Date.now(),
+    content:
+      "Aspernatur accusamus porro perspiciatis occaecati assumenda modi. Eaque nesciunt quisquam quidem enim rem. Ab corrupti atque vero quos sed facilis odit nemo voluptas. Illo distinctio dolore accusantium. Sequi deserunt qui debitis explicabo. Ipsa atque suscipit repudiandae velit architecto.",
+    createdAt: "2022-09-10T07:47:45.804Z",
+    image: `https://picsum.photos/1000/500?q=${Date.now()}`,
+    tweetedBy: {
+      id: "a2b9f2ce-a4bf-45bd-a545-5ee996ffa451",
+      name: "Verna Pouros",
+    },
+    likeCount: 563,
+    commentCount: 504,
+    reTweetsCount: 63,
+    isLiked: false,
+  });
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleTweet = (event) => {
+    event.preventDefault();
+    setTweets((tweets) => {
+      return [tweet, ...tweets];
+    });
+  };
+
+  const handleChange = (event) => {
+    setValue(event.target.value)
+    setTweet({
+      ...tweet,
+      [event.target.name]: event.target.value,
+      image: `https://picsum.photos/1000/500?q=${Date.now()}`,
+    });
   };
 
   return (
@@ -95,7 +129,7 @@ export const TweetProfile = ({closetweet}) => {
             fullWidth
             size="small"
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
           />
         </div>
         <div>
@@ -145,7 +179,7 @@ export const TweetProfile = ({closetweet}) => {
           </div>
           <div>
             <Button
-            onClick={closetweet}
+            onClick={handleTweet}
               variant="contained"
               sx={{
                 borderRadius: "2rem",

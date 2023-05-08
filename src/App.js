@@ -3,6 +3,7 @@ import {Routes, Route} from 'react-router-dom'
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import PreHome from './pages/PreHome/PreHome';
 import { useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 import {fetchUsers} from './services/users'
@@ -11,9 +12,11 @@ import { tweetsAtom } from './Recoil/tweets';
 import {usersAtom} from './Recoil/users'
 
 
+
 function App() {
   const setTweets = useSetRecoilState(tweetsAtom);
   const setUsers = useSetRecoilState(usersAtom);
+  
 
   useEffect(() => {
     fetchTweets().then((tweets) => {
@@ -28,7 +31,8 @@ function App() {
     <div className="App">
      
       <Routes>
-        <Route path='/' element={<Home/>} />
+        <Route path='/' element={<PreHome/>} />
+        <Route path='/home' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
       </Routes>

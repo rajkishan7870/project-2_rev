@@ -22,7 +22,7 @@ export default function Feeds() {
 
   return (
     <div>
-       {tweets.map((tweet,index)=>{
+       {tweets.slice(0,50).map((tweet,index)=>{
         return(
             <FeedCard
             onToggleLike={() => toggleLike(index)}

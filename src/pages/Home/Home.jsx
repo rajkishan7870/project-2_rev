@@ -3,7 +3,6 @@ import Style from "./Home.module.css";
 import SideNav from "../Slides/SideNav/SideNav";
 import Right from "../Slides/Right/Right";
 import Middle from "../Slides/Middle/Middle";
-import Footer from '../Footer/Footer'
 
 
 export default function Home(){
@@ -21,11 +20,6 @@ export default function Home(){
        <Right/>
       </div>
     </div>
-
-    <div>
-      <Footer/>
-    </div>
-
     </div>
   );
 };

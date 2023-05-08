@@ -11,7 +11,7 @@ import ViewKanbanIcon from "@mui/icons-material/ViewKanban";
 import imgs from "../../utils/profile.png";
 
 
-export default function FeedCard({tweet}) {
+export default function FeedCard({tweet, onToggleLike}) {
 
     const [open, setOpen] = React.useState(false);
 
@@ -69,7 +69,7 @@ export default function FeedCard({tweet}) {
             <FaRetweet size={30} />
             &nbsp;<span>{tweet.reTweetCount}</span>
           </span>
-          <span>
+          <span onClick={onToggleLike}>
             {tweet.isLiked ? (
               <AiFillHeart size={25} fill="#e91e63" />
             ) : (
