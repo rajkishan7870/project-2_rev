@@ -172,9 +172,9 @@ export default function SideNav() {
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{ display: "flex", gap: "1rem" }}>
-              {getName[getName.length-1].name} <BasicMenu />
+              {getName[getName.length-1]?.name} <BasicMenu />
             </span>
-            <span>@{getName[getName.length-1].name}</span>
+            <span>@{getName[getName.length-1]?.name}</span>
           </div>
         </div>
       )}

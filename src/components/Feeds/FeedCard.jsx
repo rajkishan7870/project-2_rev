@@ -55,6 +55,7 @@ export default function FeedCard({tweet, onToggleLike}) {
         <div>{tweet.content} </div>
         <div>
           <img
+            onDoubleClick={onToggleLike}
             src={tweet.image}
             style={{ objectFit: "contain", width: "90%", borderRadius: "1rem" }}
             alt=""
