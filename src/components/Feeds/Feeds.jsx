@@ -1,5 +1,5 @@
 import React from 'react'
-import { tweetsAtom } from '../../Recoil/tweets';
+import { tweetsAtom } from '../../Recoil/Tweets';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import FeedCard from './FeedCard';
 

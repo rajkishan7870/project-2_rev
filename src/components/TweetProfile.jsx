@@ -16,7 +16,9 @@ import MenuItem from "@mui/material/MenuItem";
 import Style from "./TweetProfile.module.css";
 import imgs from '../utils/profile.png'
 import { useSetRecoilState } from "recoil";
-import { tweetsAtom } from "../Recoil/tweets";
+import { tweetsAtom } from "../Recoil/Tweets";
+
+
 export const TweetProfile = () => {
   const[value,setValue] = useState("");
   const [anchorEl, setAnchorEl] = useState(null);
