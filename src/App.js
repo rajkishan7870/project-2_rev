@@ -9,7 +9,7 @@ import { useSetRecoilState } from 'recoil';
 import {fetchUsers} from './services/users'
 import { fetchTweets } from './services/tweets';
 import { tweetsAtom } from './Recoil/Tweets';
-import {usersAtom} from './Recoil/users'
+import {usersAtom} from './Recoil/Users'
 
 
 
